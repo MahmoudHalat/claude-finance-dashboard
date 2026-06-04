@@ -1,0 +1,52 @@
+# Finance Dashboard
+
+> Free, open-source tool. Drop your bank and credit-card exports into Claude Code, paste one prompt, and get a single offline dashboard that finds every subscription, separates real spending from transfers, and flags audit risk. Nothing leaves your machine.
+
+## What it is
+Finance Dashboard is a one-shot Claude Code prompt that turns raw bank and credit-card statement exports (CSV, XLS, XLSX) into one self-contained, interactive, offline HTML dashboard. The whole pipeline runs locally — no upload, no account linking, and no API key beyond Claude Code itself.
+
+## Key facts
+- Type: Free, open-source developer tool / Claude Code demonstration
+- Author: Mahmoud Halat (https://mahmoudhalat.com)
+- Built by: Space & Story (https://spaceandstory.co), an AEO-first web studio
+- License: MIT
+- Cost: $0
+- Privacy: Runs 100% locally; no financial data leaves the user's machine
+- Generated stack: plain Python (parse, classify, aggregate) plus a single self-contained HTML file with Apache ECharts inlined
+- Input: CSV / XLS / XLSX exports from any bank or credit-card provider
+- Output: one offline HTML dashboard, opened by double-click, no server required
+
+## Pages
+- / — Home: what it does, the questions it answers, how it works, features, and FAQ.
+- /prompt — The exact one-shot Claude Code prompt. Copy and paste it to build the dashboard from your own exports.
+- /demo — Interactive live demo built from fictional sample data.
+
+## Guides (/blog)
+- /blog/find-forgotten-subscriptions — How to find the subscriptions you forgot you're paying for: scan statements for recurring charges, or point a free local AI tool at your exports. Covers App Store bundling, annual charges, and how to actually cancel.
+- /blog/analyze-bank-statements-with-ai — How to analyze your bank statements with AI without uploading them anywhere. The local Claude Code method, the privacy case against upload-based apps, and a four-stage pipeline (parse, classify/flow-type, aggregate, render).
+- /blog/free-private-alternative-to-mint-copilot-monarch — A free, private, open-source alternative to Mint, Copilot, Monarch, and YNAB that never links your bank login. Honest comparison table and who each tool is for.
+- /blog/anatomy-of-a-finance-dashboard — Anatomy of the report: what each of the eleven sections shows and the flow-typing, reconciliation, and run-rate rigor behind the numbers.
+- /blog/what-replaced-mint — What replaced Mint? Every major alternative compared (Rocket Money, Monarch, Copilot, YNAB, Actual Budget, spreadsheets) with current 2026 pricing and a privacy lens.
+
+## What the dashboard finds
+- Every subscription and recurring charge, with a true monthly run-rate and active-or-lapsed status
+- Real spending by category over months, quarters, and years (stacked bars plus a drill-down treemap)
+- A GitHub-style daily spending calendar heatmap
+- Income by source, kept separate from person-to-person transfers
+- Money flow as a Sankey diagram (sources to accounts to uses) and a per-counterparty timeline
+- A tax-audit risk read: unexplained transfers, income-versus-spending gaps, and cash intensity, ranked by severity
+- Multi-account consolidation with automatic de-duplication of overlapping re-exports
+
+## How to use
+1. Export CSV, XLS, or XLSX files from your bank and credit-card portals into one empty folder.
+2. Open Claude Code in that folder.
+3. Paste the prompt from /prompt.
+4. Claude builds the pipeline and produces dashboard.html. Open it in any browser.
+
+## Related properties (same author)
+- Space & Story — https://spaceandstory.co — an AEO-first web studio that builds sites and tools designed to be found by Google and AI search. This dashboard is a working sample of that work.
+- GiveFeedback — https://givefeedback.dev — a tool to collect, triage, and act on product feedback.
+- Mahmoud Halat — https://mahmoudhalat.com — personal site and portfolio.
+
+## Source
+- GitHub: https://github.com/MahmoudHalat/claude-finance-dashboard (MIT license)

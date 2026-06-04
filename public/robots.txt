@@ -1,0 +1,41 @@
+# Search Engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# OpenAI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Google AI (Gemini)
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# All others
+User-agent: *
+Allow: /
+
+# Content Signals (RFC draft-romm-aipref-contentsignals)
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+# Sitemap
+Sitemap: https://claude-finance-dashboard.choyin.workers.dev/sitemap.xml
+
+# LLMs
+llms.txt: https://claude-finance-dashboard.choyin.workers.dev/llms.txt

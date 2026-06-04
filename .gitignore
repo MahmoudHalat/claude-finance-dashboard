@@ -1,0 +1,47 @@
+# ── Dependencies & build output ───────────────────────────────────
+node_modules/
+dist/
+.output/
+.vite/
+.wrangler/
+.dev.vars
+*.local
+
+# ── NEVER commit real financial data ──────────────────────────────
+# If you clone this and run the prompt on your own statements, these
+# patterns keep your raw exports and any pipeline output that may hold
+# real numbers out of git. The demo dashboard (public/dashboard.html)
+# is fictional and is intentionally committed.
+*.csv
+*.xls
+*.xlsx
+*.ofx
+*.qfx
+*.qbo
+/data/
+raw/
+transactions*.json
+classified*.json
+dashboard_data*.json
+audit_metrics*.json
+audit_findings*.json
+uncategorized*.json
+tail_rules*.json
+subs_extra*.json
+Financial-Almanac.html
+
+# ── High-res screenshot sources (optimized copies live in public/) ─
+docs/screenshots/
+
+# ── Python (if you run the generated pipeline locally) ─────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# ── OS / editor ───────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

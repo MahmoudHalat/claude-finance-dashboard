@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://claude-finance-dashboard.choyin.workers.dev/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://claude-finance-dashboard.choyin.workers.dev/prompt</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude-finance-dashboard.choyin.workers.dev/demo</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://claude-finance-dashboard.choyin.workers.dev/blog</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://claude-finance-dashboard.choyin.workers.dev/blog/find-forgotten-subscriptions</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://claude-finance-dashboard.choyin.workers.dev/blog/free-private-alternative-to-mint-copilot-monarch</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://claude-finance-dashboard.choyin.workers.dev/blog/what-replaced-mint</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://claude-finance-dashboard.choyin.workers.dev/blog/analyze-bank-statements-with-ai</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://claude-finance-dashboard.choyin.workers.dev/blog/anatomy-of-a-finance-dashboard</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+</urlset>

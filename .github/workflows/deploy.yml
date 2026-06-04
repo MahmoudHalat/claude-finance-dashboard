@@ -1,0 +1,29 @@
+name: Deploy to Cloudflare
+
+# One-push deploys. Add two repo secrets to enable:
+#   CLOUDFLARE_API_TOKEN  — a token with "Edit Cloudflare Workers" permission
+#   CLOUDFLARE_ACCOUNT_ID — your Cloudflare account id
+# Without them, this workflow is skipped (forks won't fail).
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.repository == 'MahmoudHalat/claude-finance-dashboard'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Deploy with Wrangler
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
