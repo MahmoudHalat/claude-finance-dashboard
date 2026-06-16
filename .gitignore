@@ -1,0 +1,40 @@
+# ── NEVER commit real financial data ──────────────────────────────
+# If you clone this and run the prompt on your own statements, these
+# patterns keep your raw exports and any pipeline output that may hold
+# real numbers out of git. The demo dashboard (public/dashboard.html)
+# is fictional and is intentionally committed.
+*.csv
+*.xls
+*.xlsx
+*.ofx
+*.qfx
+*.qbo
+/data/
+raw/
+transactions*.json
+classified*.json
+dashboard_data*.json
+audit_metrics*.json
+audit_findings*.json
+uncategorized*.json
+tail_rules*.json
+subs_extra*.json
+# your generated dashboard (anything but the committed demo)
+Financial-Almanac.html
+*-MINE.html
+
+# ── Python (the generated pipeline runs locally) ──────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# ── Claude Code / tooling ─────────────────────────────────────────
+.claude/
+
+# ── OS / editor ───────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
