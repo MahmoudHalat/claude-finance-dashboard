@@ -18,20 +18,45 @@ GOAL: one self-contained, OFFLINE interactive HTML dashboard that consolidates m
 credit-card statement exports (CSV/XLS/XLSX — several accounts, different column layouts) into a
 personal-finance intelligence report. Do it end to end, locally. Nothing leaves my machine. Use
 subagents where they help. Verify it in a browser before you tell me it's done.
+Assume I am NOT technical: guide me in plain language through anything you need from me (above all,
+getting my statement files to you), tell me what you're doing as you go, and never make me guess.
 
-━━ STEP 0 — pick your path ━━
-Look in this folder.
-• IF you see `public/dashboard.html` and `DATA_CONTRACT.md` (you're in the claude-finance-dashboard
-  repo): SCAFFOLD from them — do NOT redesign anything.
-    – `public/dashboard.html` is a finished, working, self-contained renderer (Apache ECharts
-      inlined). It draws everything from one inlined object: `window.FIN = {…}`.
-    – `DATA_CONTRACT.md` documents that object's exact shape, key by key.
-    – Your only job: (1) build a local Python pipeline that turns MY statements into that exact
-      `window.FIN` JSON, and (2) make my dashboard by copying `public/dashboard.html`, replacing its
-      `window.FIN = {…}` block with mine, and stripping the demo branding ("SAMPLE · FICTIONAL DATA",
-      "// DEMO", the demo <title>) so it shows my real numbers. Match the contract precisely so every
-      chart, table and the audit section just work; drop (don't break) any section I have no data for.
-• ELSE (empty folder): build the renderer too, from scratch, per "FULL SPEC" at the bottom.
+━━ STEP 0 — work out where you are, then get my statements ━━
+Do this conversationally, one thing at a time, and do NOT start parsing until you actually have my files.
+
+A) WHERE ARE YOU? Run `ls` on the folder you're running in and tell me, in one line, which case you're in:
+   • You see `public/dashboard.html` and `DATA_CONTRACT.md` → you're inside a clone of the
+     claude-finance-dashboard repo. SCAFFOLD mode: `public/dashboard.html` is a finished, working,
+     self-contained renderer (Apache ECharts inlined) that draws everything from one inlined
+     `window.FIN = {…}` object, and `DATA_CONTRACT.md` documents that object's exact shape key by key.
+     Reuse them as-is, do NOT redesign. Your only job is to (1) build the pipeline that turns my
+     statements into that exact `window.FIN` JSON, and (2) make my dashboard by copying
+     `public/dashboard.html`, swapping its `window.FIN = {…}` block for mine, and stripping the demo
+     branding ("SAMPLE · FICTIONAL DATA", "// DEMO", the demo <title>). Match the contract precisely so
+     every chart, table and the audit just work; drop (don't break) any section I have no data for.
+   • You don't see them → you're just in a working folder. FROM-SCRATCH mode: you'll also build the
+     renderer yourself, per "FULL SPEC" at the bottom.
+
+B) DO YOU ALREADY HAVE MY FILES? Look in this folder and any subfolder for statement exports
+   (.csv / .xls / .xlsx / .ofx / .qfx / .qbo). If you find some, list them back to me as
+   "filename → the account I think it is" and ask me to confirm or correct before you touch them.
+
+C) IF YOU FOUND NONE, STOP and walk me through getting them — assume I've never done this before:
+   1. For each bank account and credit card I have, open its website or app and look for a button like
+      "Export", "Download", "Statements", or "Transactions". Pick the LONGEST date range it offers (a
+      few years is ideal). Prefer CSV; if there's no CSV take XLS/XLSX; if neither, OFX/QFX; PDF only as
+      a last resort. Download one file per account.
+   2. Put every file into a single folder on my computer. Don't rename them or tidy them up — you'll
+      read them exactly as they come.
+   3. Hand that folder to you. Easiest: move or copy the files into THIS folder you're running in.
+      Otherwise tell me where the folder is — drag the folder into this chat to paste its full path, or
+      copy the path and send it — and read my files straight from there.
+   Then wait for me. When I tell you I'm done, re-check, list back what you found, and confirm with me
+   before parsing anything.
+
+Throughout: the more accounts I hand over (chequing, savings, every card) the better the consolidation;
+if my bank only gives PDFs, take them but nudge me to export CSV/XLS if that's an option; and remind me
+that nothing here ever leaves my machine.
 
 ━━ THE DATA MODEL (do this either way — it's the important part) ━━
 Build a small Python pipeline (pandas/openpyxl only if a file needs it):
